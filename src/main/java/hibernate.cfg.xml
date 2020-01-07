@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://localhost:3306/db_multitienda</property>
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <mapping class="com.backend.apirest.models.entity.AdjuntoEntity"/>
+        <mapping class="com.backend.apirest.models.entity.CorreoEntity"/>
+        <mapping class="com.backend.apirest.models.entity.DetalleCorreoEntity"/>
+        <mapping class="com.backend.apirest.models.entity.PersonaEntity"/>
+        <mapping class="com.backend.apirest.models.entity.UsuarioEntity"/>
+        <mapping class="com.backend.apirest.models.entity.Categoriaempresa"/>
+        <mapping class="com.backend.apirest.models.entity.Categoriaproducto"/>
+        <mapping class="com.backend.apirest.models.entity.Ciudad"/>
+        <mapping class="com.backend.apirest.models.entity.Distribuidor"/>
+        <mapping class="com.backend.apirest.models.entity.Distrito"/>
+        <mapping class="com.backend.apirest.models.entity.Empaque"/>
+        <mapping class="com.backend.apirest.models.entity.Empresa"/>
+        <mapping class="com.backend.apirest.models.entity.Ordencabecera"/>
+        <mapping class="com.backend.apirest.models.entity.Ordendetalle"/>
+        <mapping class="com.backend.apirest.models.entity.Pais"/>
+        <mapping class="com.backend.apirest.models.entity.Permiso"/>
+        <mapping class="com.backend.apirest.models.entity.Producto"/>
+        <mapping class="com.backend.apirest.models.entity.Productoimagen"/>
+        <mapping class="com.backend.apirest.models.entity.Proveedor"/>
+        <mapping class="com.backend.apirest.models.entity.Sede"/>
+        <mapping class="com.backend.apirest.models.entity.Stockproducto"/>
+        <mapping class="com.backend.apirest.models.entity.Unidadmedida"/>
+        <mapping class="com.backend.apirest.models.entity.Usuario"/>
+        <mapping class="com.backend.apirest.models.entity.Estadoorden"/>
+        <!-- <property name="connection.username"/> -->
+        <!-- <property name="connection.password"/> -->
+
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>
