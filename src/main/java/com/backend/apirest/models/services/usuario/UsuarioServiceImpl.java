@@ -4,7 +4,6 @@ import com.backend.apirest.models.dao.IUsuarioDao;
 import com.backend.apirest.models.entity.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -15,9 +14,8 @@ public class UsuarioServiceImpl implements IUsuarioService {
     private IUsuarioDao usuarioDao;
 
     @Override
-    @Transactional(readOnly = true)
     public List<Usuario> findAdll() {
-        return (List<Usuario>) usuarioDao.findAll();
+        return null;
     }
 
     @Override

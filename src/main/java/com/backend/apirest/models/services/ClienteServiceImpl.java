@@ -19,4 +19,8 @@ public class ClienteServiceImpl implements IClienteService {
     public List<Cliente> findAll() {
         return (List<Cliente>) clienteDao.findAll();
     }
+
+    public List<Cliente> findById() {
+        return (List<Cliente>) clienteDao.findAll();
+    }
 }

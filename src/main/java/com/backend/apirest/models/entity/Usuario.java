@@ -8,13 +8,14 @@ import java.util.Objects;
 @Entity
 public class Usuario {
     private int idUsuario;
-    private int idPermiso;
+    //private int idPermiso;
     private String emailUsuario;
     private String password;
     private Date fechaCreacion;
     private Collection<Distribuidor> distribuidorsByIdUsuario;
     private Collection<Proveedor> proveedorsByIdUsuario;
     private Permiso permisoByIdPermiso;
+
 
     @Id
     @Column(name = "id_usuario", nullable = false)
@@ -26,16 +27,17 @@ public class Usuario {
         this.idUsuario = idUsuario;
     }
 
-    //modificado insertable = false, updatable = false
+    /*//modificado insertable = false, updatable = false
     @Basic
-    @Column(name = "id_permiso", nullable = false, insertable = false, updatable = false)
+    @Column(name = "id_permiso", nullable = false)
+    //@Column(name = "id_permiso", nullable = false)
     public int getIdPermiso() {
         return idPermiso;
     }
 
     public void setIdPermiso(int idPermiso) {
         this.idPermiso = idPermiso;
-    }
+    }*/
 
     @Basic
     @Column(name = "email_usuario", nullable = false, length = -1)
@@ -58,7 +60,7 @@ public class Usuario {
     }
 
     @Basic
-    @Column(name = "fecha_creacion", nullable = false)
+    @Column(name = "fecha_creacion")
     public Date getFechaCreacion() {
         return fechaCreacion;
     }
@@ -67,7 +69,7 @@ public class Usuario {
         this.fechaCreacion = fechaCreacion;
     }
 
-    @Override
+    /*@Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -77,11 +79,12 @@ public class Usuario {
                 Objects.equals(emailUsuario, usuario.emailUsuario) &&
                 Objects.equals(password, usuario.password) &&
                 Objects.equals(fechaCreacion, usuario.fechaCreacion);
-    }
+    }*/
 
     @Override
     public int hashCode() {
-        return Objects.hash(idUsuario, idPermiso, emailUsuario, password, fechaCreacion);
+        //return Objects.hash(idUsuario, idPermiso, emailUsuario, password, fechaCreacion);
+        return Objects.hash(idUsuario, emailUsuario, password, fechaCreacion);
     }
 
     @OneToMany(mappedBy = "usuarioByIdUsuario")
